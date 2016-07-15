@@ -21,7 +21,8 @@ typedef void(^HotViewDidClick)(HotView * hotView,UIButton * button);
 @property(nonatomic, strong) HotViewDidClick clickBlock;        // 点击的时候调用的block
 
 @property(nonatomic, assign) BOOL isPanMoview;                  // 是否支持拖动（默认为NO）
-
+@property(nonatomic, assign) BOOL isRotate;                     // 点击的时候是否hot要旋转45°
+@property(nonatomic, assign) CGFloat rotate;                    // 旋转的度数 (默认为 45°)
 @property(nonatomic, assign) CGFloat gapMax;                    // hot按钮与添加的按钮之间的间隙 (默认为 20)
 @property(nonatomic, assign) CGFloat gapMin;                    // 添加的按钮之间的间隙 (默认为 8)
 

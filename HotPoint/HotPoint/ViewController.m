@@ -36,18 +36,6 @@
             }
         }];
         
-        
-        // 设置点击的时候 有旋转的效果
-        [UIView animateWithDuration:0.5 animations:^{
-            
-            if (button.selected) {
-                button.transform = CGAffineTransformMakeRotation(M_PI_4);
-            }else{
-                button.transform = CGAffineTransformIdentity;
-            }
-        }];
-        
-        
     }];
     [hotV hotViewImage:[UIImage imageNamed:@"add"]];
     hotV.isPanMoview = YES;

@@ -138,6 +138,8 @@
         
         self.gapMax = 20;
         self.gapMin = 8;
+        self.isRotate = YES;
+        self.rotate = M_PI_4;
         
         [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)]];
         
@@ -327,8 +329,20 @@
         
     }
     
+    // 设置点击的时候 有旋转的效果
+    if (self.isRotate) //如果需要 就旋转
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        if (self.hotPlace.selected) {
+            self.hotPlace.transform = CGAffineTransformMakeRotation(self.rotate);
+        }else{
+            self.hotPlace.transform = CGAffineTransformIdentity;
+        }
+    }];
+    
+    // block的调用
     if (self.clickBlock) {
-        self.clickBlock(self,self.hotPlace);
+        self.clickBlock(self,sender);
     }
 }
 
