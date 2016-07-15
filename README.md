@@ -16,39 +16,53 @@
 HotView  * hotV =  [HotView hotViewWithFrame:CGRectMake(250, 400, 40, 40)];
 [hotV setClickBlock:^(HotView * hotView,UIButton * button){
 
-// 设置点开之后 界面的背景颜色，默认是透明的
-[UIView animateWithDuration:0.5 animations:^{
-if (button.selected) {
-hotView.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.3];
-}
-}];
+    // 设置点开之后 界面的背景颜色，默认是透明的
+    [UIView animateWithDuration:0.5 animations:^{
+        if (button.selected) {
+            hotView.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.3];
+        }
+    }];
 
 }];
+
 [hotV hotViewImage:[UIImage imageNamed:@"add"]];
+
 hotV.isPanMoview = YES;
 
-
-
 UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(100,100, 50, 70)];
+
 [button.titleLabel setFont:[UIFont systemFontOfSize:16]];
+
 button.titleLabel.textAlignment = NSTextAlignmentCenter;
+
 [button setTitleColor:[UIColor colorWithRed:0.1 green:0.5 blue:0.8 alpha:1] forState:UIControlStateNormal];
+
 [button setImage:[UIImage imageNamed:@"sign.jpg"] forState:UIControlStateNormal];
+
 [button setTitle:@"签名" forState:UIControlStateNormal];
+
 [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 20, 0)];
-[button setTitleEdgeInsets:UIEdgeInsetsMake(50, -173, 0, 0)]; // 这个是图片的尺寸有关的
+
+[button setTitleEdgeInsets:UIEdgeInsetsMake(50, -173, 0, 0)];   // 这个是图片的尺寸有关的
+
 [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
 
-[hotV addViewToHotView:button]; // 添加按钮 必须要条用这个方法
+[hotV addViewToHotView:button];     // 添加按钮 必须要条用这个方法
 
 UIButton * button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+
 [button1 setBackgroundImage:[UIImage imageNamed:@"ss"] forState:UIControlStateNormal];
+
 [button1 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+
 [hotV addViewToHotView:button1];
 
 //    [self.view addSubview:hotV];
+
 [self.navigationController.view addSubview:hotV];
+
 //    [self.tabBarController.view addSubview:hotV];
+
 
 
 ``
@@ -58,6 +72,6 @@ UIButton * button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
 
 * @property(nonatomic, assign) BOOL isRotate;                     // 点击的时候是否hot要旋转45°
 * @property(nonatomic, assign) BOOL isPanMoview;                  // 是否支持拖动（默认为NO）
-
+* @property(nonatomic, assign) BOOL isRotate;                     // 点击的时候是否hot要旋转45°
 * @property(nonatomic, assign) CGFloat gapMax;                    // hot按钮与添加的按钮之间的间隙 (默认为 20)
 * @property(nonatomic, assign) CGFloat gapMin;                    // 添加的按钮之间的间隙 (默认为 8)
