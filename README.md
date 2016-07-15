@@ -75,3 +75,6 @@ UIButton * button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
 * @property(nonatomic, assign) BOOL isRotate;                     // 点击的时候是否hot要旋转45°
 * @property(nonatomic, assign) CGFloat gapMax;                    // hot按钮与添加的按钮之间的间隙 (默认为 20)
 * @property(nonatomic, assign) CGFloat gapMin;                    // 添加的按钮之间的间隙 (默认为 8)
+
+## 反馈
+* 如果有发现什么问题，希望各位可以及时反馈 -- QQ：2275747057
