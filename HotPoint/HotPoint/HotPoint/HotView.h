@@ -38,6 +38,11 @@ typedef void(^HotViewDidClick)(HotView * hotView,UIButton * button);
 
 
 
++ (HotView *)showHotViewInView:(UIView *)view withFrame:(CGRect)frame;
++ (HotView *)showHotViewInkeyWindowTopWithFrame:(CGRect)frame;
++ (HotView *)showHotViewInVCTop:(UIViewController *)VC withFrame:(CGRect)frame;
+
+
 /**
  *  移动hotView到某个位置
  *

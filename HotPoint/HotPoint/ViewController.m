@@ -26,7 +26,9 @@
     //    [self.view addSubview:self.tableView];
     
     
-    HotView  * hotV =  [HotView hotViewWithFrame:CGRectMake(250, 400, 40, 40)];
+//    HotView  * hotV =  [HotView hotViewWithFrame:CGRectMake(250, 400, 40, 40)];
+//    HotView  * hotV =  [HotView showHotViewInkeyWindowTopWithFrame:CGRectMake(250, 400, 40, 40)];
+    HotView  * hotV =  [HotView showHotViewInVCTop:self withFrame:CGRectMake(250, 400, 40, 40)];
     [hotV setClickBlock:^(HotView * hotView,UIButton * button){
         
         // 设置点开之后 界面的背景颜色，默认是透明的
@@ -60,7 +62,7 @@
     [hotV addViewToHotView:button1];
     
 //    [self.view addSubview:hotV];
-    [self.navigationController.view addSubview:hotV];
+//    [self.navigationController.view addSubview:hotV];
 //    [self.tabBarController.view addSubview:hotV];
     
     self.hot = hotV;

@@ -98,9 +98,37 @@
 @implementation HotView
 
 
+
++ (HotView *)showHotViewInkeyWindowTopWithFrame:(CGRect)frame{
+    UIView * view = [UIApplication sharedApplication].keyWindow;
+    return [self showHotViewInView:view withFrame:frame];
+}
+
+
++ (HotView *)showHotViewInVCTop:(UIViewController *)VC withFrame:(CGRect)frame{
+    UIView * view;
+    if (VC.tabBarController) {
+        view = VC.tabBarController.view;
+    }else if (VC.navigationController){
+        view = VC.navigationController.view;
+    }else{
+        view = VC.view;
+    }
+    return [self showHotViewInView:view withFrame:frame];
+}
+
+
++ (HotView *)showHotViewInView:(UIView *)view withFrame:(CGRect)frame{
+    HotView * hot = [HotView hotViewWithFrame:frame];
+    [view addSubview:hot];
+    return hot;
+}
+
+
 + (instancetype)hotViewWithFrame:(CGRect)frame{
     return [[self alloc] initWithFrame:frame];
 }
+
 
 
 
